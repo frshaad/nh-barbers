@@ -28,7 +28,7 @@ export default function BarberCard() {
         <p>سرویس ها</p>
       </CardContent>
       <CardFooter>
-        <RatingStars rating={3.7} />
+        <RatingStars rating={2.5} />
       </CardFooter>
     </Card>
   );
