@@ -1,5 +1,4 @@
 import type { NextConfig } from 'next';
-
 import { validateEnvironment } from '@/lib/env';
 
 validateEnvironment();

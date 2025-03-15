@@ -3,7 +3,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Next.js Starter App',
+  title: 'Barbers',
   description: 'A basic starter for Next.js',
 };
 
