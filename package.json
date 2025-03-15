@@ -1,5 +1,5 @@
 {
-  "name": "next-starter",
+  "name": "nh-barbers",
   "version": "1.0.0",
   "description": "A professional Next.js starter template with TypeScript, Tailwind CSS, and more",
   "private": true,
@@ -11,12 +11,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frshaad/next-starter.git"
+    "url": "git+https://github.com/frshaad/nh-barbers.git"
   },
   "bugs": {
-    "url": "https://github.com/frshaad/next-starter/issues"
+    "url": "https://github.com/frshaad/nh-barbers/issues"
   },
-  "homepage": "https://github.com/frshaad/next-starter#readme",
+  "homepage": "https://github.com/frshaad/nh-barbers#readme",
   "engines": {
     "node": ">=20.11"
   },
@@ -29,42 +29,42 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@next/env": "^15.2.1",
+    "@next/env": "^15.2.2",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.479.0",
-    "next": "^15.2.1",
-    "next-themes": "^0.4.5",
+    "lucide-react": "^0.482.0",
+    "next": "^15.2.2",
+    "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.2",
-    "zustand": "^5.0.3"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.22.0",
-    "@next/eslint-plugin-next": "^15.2.1",
-    "@tailwindcss/postcss": "^4.0.12",
+    "@next/eslint-plugin-next": "^15.2.2",
+    "@tailwindcss/postcss": "^4.0.14",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "eslint": "^9.22.0",
-    "eslint-config-next": "^15.2.1",
+    "eslint-config-next": "^15.2.2",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-n": "^17.16.2",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-unicorn": "^57.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.12",
+    "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0"
+    "typescript-eslint": "^8.26.1"
   }
 }
