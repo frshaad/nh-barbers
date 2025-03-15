@@ -12,7 +12,7 @@ import {
 export default function BarberCard() {
   return (
     <Card>
-      <CardHeader className="flex-row justify-between gap-3">
+      <CardHeader className="justify-between gap-6 sm:flex-row sm:gap-3">
         <div className="flex items-center gap-2.5">
           <Avatar className="size-14">
             <AvatarImage src="https://github.com/shadcn.png" />
@@ -26,7 +26,10 @@ export default function BarberCard() {
             </CardDescription>
           </div>
         </div>
-        <RatingStars rating={2.5} />
+        <div className="max-sm:flex max-sm:w-full max-sm:items-center max-sm:justify-between">
+          <p className="sm:hidden">امتیاز</p>
+          <RatingStars rating={3.3} />
+        </div>
       </CardHeader>
 
       <CardFooter className="flex-wrap gap-1">
