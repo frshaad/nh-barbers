@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
+import { Vazirmatn } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
+
+const vazirmatn = Vazirmatn({
+  subsets: ['arabic'],
+  weight: ['400', '500', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Barbers',
@@ -13,7 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="fa"
+      dir="rtl"
+      className={vazirmatn.className}
+      suppressHydrationWarning
+    >
       <body className="h-screen w-screen">
         <ThemeProvider
           attribute="class"
