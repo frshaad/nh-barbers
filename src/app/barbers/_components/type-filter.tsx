@@ -1,11 +1,11 @@
 'use client';
 
-import { useQueryState } from 'nuqs';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useShopTypeQuery } from '@/hooks/use-shop-type-query';
 
 export default function TypeFilter() {
-  const [isShop, setIsShop] = useQueryState('is_shop', { defaultValue: 'all' });
+  const { localValue, setLocalValue } = useShopTypeQuery();
 
   return (
     <div className="space-y-2">
@@ -13,10 +13,10 @@ export default function TypeFilter() {
         نوع فروشگاه
       </Label>
       <Tabs
-        defaultValue={isShop}
+        defaultValue={localValue}
         className="w-full"
         dir="rtl"
-        onValueChange={(value) => setIsShop(value)}
+        onValueChange={setLocalValue}
         id="shop-type"
       >
         <TabsList className="w-full">
