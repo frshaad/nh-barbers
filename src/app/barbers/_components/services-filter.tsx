@@ -1,5 +1,6 @@
 'use client';
 
+import { ServiceCheckBoxSkeleton } from '@/app/barbers/_components/service-checkbox.skeleton';
 import { Label } from '@/components/ui/label';
 import { useFetchServicesList } from '@/hooks/use-fetch-services-list';
 import { useServicesFilter } from '@/hooks/use-services-filter';
@@ -15,7 +16,18 @@ export default function ServicesFilter() {
   } = useFetchServicesList();
 
   if (isPending) {
-    return <p>Loading...</p>;
+    return (
+      <div className="space-y-2">
+        <Label className="text-base">Services</Label>
+        <div className="space-y-1.5">
+          <ServiceCheckBoxSkeleton />
+          <ServiceCheckBoxSkeleton />
+          <ServiceCheckBoxSkeleton />
+          <ServiceCheckBoxSkeleton />
+          <ServiceCheckBoxSkeleton />
+        </div>
+      </div>
+    );
   }
 
   if (isError) {
