@@ -15,9 +15,10 @@ export function useSearchQuery() {
 
   return useQuery<BarbersResponse>({
     queryKey: ['search', { search, shopType, services }],
-    queryFn: async () => {
+    queryFn: async ({ signal }) => {
       const response = await api.get(
         `/barbers?search=${search}&is_shop=${shopType}&services=${services}`,
+        { signal },
       );
       return response.data;
     },

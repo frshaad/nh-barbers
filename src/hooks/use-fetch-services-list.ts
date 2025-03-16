@@ -5,8 +5,8 @@ import type { ServicesResponse } from '@/types/services';
 export function useFetchServicesList() {
   return useQuery<ServicesResponse>({
     queryKey: ['services'],
-    queryFn: async () => {
-      const response = await api.get('/services');
+    queryFn: async ({ signal }) => {
+      const response = await api.get('/services', { signal });
       return response.data;
     },
   });
