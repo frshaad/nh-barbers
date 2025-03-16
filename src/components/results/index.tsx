@@ -1,4 +1,4 @@
-import SearchResults from '@/app/barbers/_components/search-results';
+import SearchResults from '@/components/results/search-results';
 import {
   Card,
   CardContent,

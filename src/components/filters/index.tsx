@@ -1,5 +1,5 @@
-import ServicesFilter from '@/app/barbers/_components/services-filter';
-import TypeFilter from '@/app/barbers/_components/type-filter';
+import ServicesFilter from '@/components/filters/services-filter';
+import TypeFilter from '@/components/filters/type-filter';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 

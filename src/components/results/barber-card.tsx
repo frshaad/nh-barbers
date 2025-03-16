@@ -1,4 +1,4 @@
-import RatingStars from '@/app/barbers/_components/rating-stars';
+import RatingStars from '@/components/results/rating-stars';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import {

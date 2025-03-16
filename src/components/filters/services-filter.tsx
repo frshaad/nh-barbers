@@ -1,4 +1,4 @@
-import ServicesList from '@/app/barbers/_components/services-list';
+import ServicesList from '@/components/filters/services-list';
 import { Label } from '@/components/ui/label';
 
 export default function ServicesFilter() {

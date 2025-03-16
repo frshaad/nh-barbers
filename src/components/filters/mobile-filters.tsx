@@ -1,4 +1,4 @@
-import Filters from '@/app/barbers/_components/filters';
+import Filters from '@/components/filters';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,

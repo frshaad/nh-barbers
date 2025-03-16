@@ -1,10 +1,10 @@
 'use client';
 
 import { useMediaQuery } from 'usehooks-ts';
-import Filters from '@/app/barbers/_components/filters';
-import MobileFilters from '@/app/barbers/_components/mobile-filters';
-import Results from '@/app/barbers/_components/results';
-import SearchBox from '@/app/barbers/_components/search-box';
+import Filters from '@/components/filters';
+import MobileFilters from '@/components/filters/mobile-filters';
+import Results from '@/components/results';
+import SearchBox from '@/components/search-box';
 import { cn } from '@/lib/utils';
 
 export default function BarbersPage() {

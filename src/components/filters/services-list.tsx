@@ -1,5 +1,5 @@
-import { ServiceCheckBox } from '@/app/barbers/_components/service-checkbox';
-import { ServiceCheckBoxSkeleton } from '@/app/barbers/_components/service-checkbox.skeleton';
+import { ServiceCheckBox } from '@/components/filters/service-checkbox';
+import { ServiceCheckBoxSkeleton } from '@/components/filters/service-checkbox.skeleton';
 import { useFetchServicesList } from '@/hooks/use-fetch-services-list';
 import { useServicesFilter } from '@/hooks/use-services-filter';
 

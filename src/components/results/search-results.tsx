@@ -1,5 +1,5 @@
-import BarberCard from '@/app/barbers/_components/barber-card';
-import BarberCardSkeleton from '@/app/barbers/_components/barber-card.skeleton';
+import BarberCard from '@/components/results/barber-card';
+import BarberCardSkeleton from '@/components/results/barber-card.skeleton';
 import { useSearchQuery } from '@/hooks/use-search-query';
 
 export default function SearchResults() {
