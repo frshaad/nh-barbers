@@ -23,7 +23,7 @@ export function ServiceCheckBox({
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
       />
       <label
-        htmlFor={title}
+        htmlFor={slug}
         className="cursor-pointer text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
         {title}

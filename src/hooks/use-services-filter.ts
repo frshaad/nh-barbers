@@ -11,18 +11,23 @@ export function useServicesFilter() {
   const [debouncedServices] = useDebounceValue(localServices, DEBOUNCING_DELAY);
 
   useEffect(() => {
+    setLocalServices(services);
+  }, [services]);
+
+  useEffect(() => {
     setServices(debouncedServices);
   }, [debouncedServices, setServices]);
 
-  const servicesArray = localServices ? localServices.split(',') : [];
+  const servicesArray = localServices
+    ? localServices.split(',').filter(Boolean)
+    : [];
 
   function handleServiceToggle(value: string, checked: boolean) {
-    if (checked) {
-      setLocalServices([...servicesArray, value].join(','));
-    } else {
-      const newServices = servicesArray.filter((service) => service !== value);
-      setLocalServices(newServices.length === 0 ? '' : newServices.join(','));
-    }
+    const newServices = checked
+      ? [...servicesArray, value]
+      : servicesArray.filter((service) => service !== value);
+
+    setLocalServices(newServices.join(','));
   }
 
   return {
