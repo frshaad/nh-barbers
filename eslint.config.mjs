@@ -2,7 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 import configPrettier from 'eslint-config-prettier';
-import n from 'eslint-plugin-n';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
 
@@ -20,7 +19,6 @@ export default tseslint.config([
   eslintPluginUnicorn.configs.recommended,
   ...pluginQuery.configs['flat/recommended'],
   {
-    plugins: { n },
     rules: {
       'max-depth': ['error', { max: MAX_DEPTH }],
       'max-params': ['error', { max: MAX_FN_PARAMS }],
@@ -55,8 +53,6 @@ export default tseslint.config([
       'jsx-a11y/no-static-element-interactions': 'error',
       'jsx-a11y/click-events-have-key-events': 'error',
       'jsx-a11y/no-noninteractive-element-interactions': 'error',
-
-      'n/no-process-env': 'error',
 
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/no-null': 'off',
