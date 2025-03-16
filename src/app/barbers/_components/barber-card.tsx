@@ -21,6 +21,7 @@ export default function BarberCard({
   address,
   rate,
   services,
+  reviews_count,
 }: BarberCardProps) {
   const normalizedServices = [...new Set(services)]; // Remove duplicated items
 
@@ -36,9 +37,12 @@ export default function BarberCard({
             <CardDescription>{address}</CardDescription>
           </div>
         </div>
-        <div className="max-sm:flex max-sm:w-full max-sm:items-center max-sm:justify-between">
-          <p className="sm:hidden">Rating</p>
-          <RatingStars rating={rate} />
+        <div className="max-sm:flex max-sm:w-full max-sm:items-center max-sm:justify-between sm:space-y-2">
+          <RatingStars rating={rate} showValue={false} />
+          <p className="text-sm font-light">
+            <span className="text-lg font-semibold">{rate}</span> from{' '}
+            {reviews_count} {reviews_count > 1 ? 'Reviews' : 'Review'}
+          </p>
         </div>
       </CardHeader>
 
