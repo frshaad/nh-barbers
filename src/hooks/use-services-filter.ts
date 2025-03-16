@@ -1,12 +1,21 @@
+import { useEffect, useState } from 'react';
 import { useQueryState } from 'nuqs';
+import { useDebounceValue } from 'usehooks-ts';
+import { DEBOUNCING_DELAY } from '@/lib/constants';
 import type { ServicesList } from '@/types/services';
 
 export function useServicesFilter(servicesList: ServicesList) {
   const [services, setServices] = useQueryState('services', {
     defaultValue: '',
   });
+  const [localServices, setLocalServices] = useState(services);
+  const [debouncedServices] = useDebounceValue(localServices, DEBOUNCING_DELAY);
 
-  const servicesArray = services ? services.split(',') : [];
+  useEffect(() => {
+    setServices(debouncedServices);
+  }, [debouncedServices, setServices]);
+
+  const servicesArray = localServices ? localServices.split(',') : [];
 
   function handleServiceToggle(value: string, checked: boolean) {
     if (checked) {
@@ -14,12 +23,12 @@ export function useServicesFilter(servicesList: ServicesList) {
         ...servicesArray,
         value,
       ]);
-      setServices(newServices.join(','));
+      setLocalServices(newServices.join(','));
     } else {
       const newServices = sortServicesByOriginalOrder(
         servicesArray.filter((service) => service !== value),
       );
-      setServices(newServices.length === 0 ? null : newServices.join(','));
+      setLocalServices(newServices.length === 0 ? '' : newServices.join(','));
     }
   }
 
