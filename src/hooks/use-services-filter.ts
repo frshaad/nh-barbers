@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import { useQueryState } from 'nuqs';
 import { useDebounceValue } from 'usehooks-ts';
 import { DEBOUNCING_DELAY } from '@/lib/constants';
-import type { ServicesList } from '@/types/services';
 
-export function useServicesFilter(servicesList: ServicesList) {
+export function useServicesFilter() {
   const [services, setServices] = useQueryState('services', {
     defaultValue: '',
   });
@@ -19,15 +18,9 @@ export function useServicesFilter(servicesList: ServicesList) {
 
   function handleServiceToggle(value: string, checked: boolean) {
     if (checked) {
-      const newServices = sortServicesByOriginalOrder([
-        ...servicesArray,
-        value,
-      ]);
-      setLocalServices(newServices.join(','));
+      setLocalServices([...servicesArray, value].join(','));
     } else {
-      const newServices = sortServicesByOriginalOrder(
-        servicesArray.filter((service) => service !== value),
-      );
+      const newServices = servicesArray.filter((service) => service !== value);
       setLocalServices(newServices.length === 0 ? '' : newServices.join(','));
     }
   }
@@ -36,13 +29,4 @@ export function useServicesFilter(servicesList: ServicesList) {
     selectedServices: servicesArray,
     handleServiceToggle,
   };
-
-  // ******** ↓ Helpers ↓ ********
-  function sortServicesByOriginalOrder(services: string[]): string[] {
-    return services.sort((a, b) => {
-      const indexA = servicesList.findIndex((item) => item.value === a);
-      const indexB = servicesList.findIndex((item) => item.value === b);
-      return indexA - indexB;
-    });
-  }
 }

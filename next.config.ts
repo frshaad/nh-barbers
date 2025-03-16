@@ -4,10 +4,13 @@ import { validateEnvironment } from '@/lib/env';
 validateEnvironment();
 
 const nextConfig: NextConfig = {
-  logging: {
-    fetches: {
-      fullUrl: true,
-    },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lookee.nwhco.ir',
+      },
+    ],
   },
 };
 

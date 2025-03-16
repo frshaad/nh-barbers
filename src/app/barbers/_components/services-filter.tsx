@@ -1,34 +1,39 @@
 'use client';
 
 import { Label } from '@/components/ui/label';
+import { useFetchServicesList } from '@/hooks/use-fetch-services-list';
 import { useServicesFilter } from '@/hooks/use-services-filter';
-import type { ServicesList } from '@/types/services';
 import { ServiceCheckBox } from './service-checkbox';
 
-// This will be replaced with API data later
-const servicesList: ServicesList = [
-  { id: '1', value: 'slug1', label: 'Slug one' },
-  { id: '2', value: 'slug2', label: 'Slug two' },
-  { id: '3', value: 'slug3', label: 'Slug three' },
-];
-
 export default function ServicesFilter() {
-  const { selectedServices, handleServiceToggle } =
-    useServicesFilter(servicesList);
+  const { selectedServices, handleServiceToggle } = useServicesFilter();
+  const {
+    data: servicesList,
+    isPending,
+    isError,
+    error,
+  } = useFetchServicesList();
+
+  if (isPending) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Error happend: {error.message}</p>;
+  }
 
   return (
     <div className="space-y-2">
       <Label className="text-base">سرویس‌ها</Label>
       <div className="space-y-1.5">
-        {servicesList.map((item) => (
+        {servicesList.results.map((item) => (
           <ServiceCheckBox
-            key={item.id}
-            isChecked={selectedServices.includes(item.value)}
-            value={item.value}
-            label={item.label}
+            key={item.slug}
+            isChecked={selectedServices.includes(item.slug)}
             onCheckedChange={(checked) =>
-              handleServiceToggle(item.value, checked)
+              handleServiceToggle(item.slug, checked)
             }
+            {...item}
           />
         ))}
       </div>

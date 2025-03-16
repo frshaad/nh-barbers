@@ -1,33 +1,32 @@
 import { Checkbox } from '@/components/ui/checkbox';
+import type { ServicesResult } from '@/types/services';
 
-interface ServiceCheckBoxProps {
-  value: string;
-  label: string;
+type ServiceCheckBoxProps = ServicesResult & {
   isChecked: boolean;
   // eslint-disable-next-line no-unused-vars
   onCheckedChange: (checked: boolean) => void;
-}
+};
 
 export function ServiceCheckBox({
-  value,
-  label,
+  title,
+  slug,
   isChecked,
   onCheckedChange,
 }: ServiceCheckBoxProps) {
   return (
     <div className="flex items-center space-x-2">
       <Checkbox
-        id={value}
-        value={value}
+        id={slug}
+        value={slug}
         checked={isChecked}
         className="cursor-pointer"
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
       />
       <label
-        htmlFor={value}
+        htmlFor={title}
         className="cursor-pointer text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
-        {label}
+        {title}
       </label>
     </div>
   );

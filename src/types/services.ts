@@ -1,7 +1,9 @@
-export type Service = {
-  id: string;
-  value: string;
-  label: string;
+export type ServicesResponse = {
+  results: ServicesResult[];
 };
 
-export type ServicesList = Service[];
+export type ServicesResult = {
+  slug: string;
+  title: string;
+  icon?: string;
+};
