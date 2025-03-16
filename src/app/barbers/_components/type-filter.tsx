@@ -10,19 +10,18 @@ export default function TypeFilter() {
   return (
     <div className="space-y-2">
       <Label htmlFor="shop-type" className="text-base">
-        نوع فروشگاه
+        Shop Type
       </Label>
       <Tabs
         defaultValue={localValue}
         className="w-full"
-        dir="rtl"
         onValueChange={setLocalValue}
         id="shop-type"
       >
         <TabsList className="w-full">
-          <TabsTrigger value="all">همه</TabsTrigger>
-          <TabsTrigger value="true">فقط فروشگاه‌ها</TabsTrigger>
-          <TabsTrigger value="false">آرایشگران فردی</TabsTrigger>
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="true">Only Shops</TabsTrigger>
+          <TabsTrigger value="false">Individuals</TabsTrigger>
         </TabsList>
       </Tabs>
     </div>

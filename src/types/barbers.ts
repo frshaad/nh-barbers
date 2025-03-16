@@ -2,10 +2,10 @@ export type BarbersResponse = {
   count: number;
   next: unknown;
   previous: unknown;
-  results: Result[];
+  results: Barber[];
 };
 
-export type Result = {
+export type Barber = {
   slug: string;
   fullname: string;
   is_shop: boolean;

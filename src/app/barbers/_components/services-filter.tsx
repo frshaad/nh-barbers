@@ -24,7 +24,7 @@ export default function ServicesFilter() {
 
   return (
     <div className="space-y-2">
-      <Label className="text-base">سرویس‌ها</Label>
+      <Label className="text-base">Services</Label>
       <div className="space-y-1.5">
         {servicesList.results.map((item) => (
           <ServiceCheckBox

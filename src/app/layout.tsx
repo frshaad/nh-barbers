@@ -21,12 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fa"
-      dir="rtl"
-      className={vazirmatn.className}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={vazirmatn.className} suppressHydrationWarning>
       <body className="h-screen w-screen">
         <ThemeProvider
           attribute="class"

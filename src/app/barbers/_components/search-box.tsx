@@ -2,15 +2,15 @@
 
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useSearchQuery } from '@/hooks/use-search-query';
+import { useSearchFilter } from '@/hooks/use-search-filter';
 
 export default function SearchBox() {
-  const { inputValue, setInputValue } = useSearchQuery();
+  const { inputValue, setInputValue } = useSearchFilter();
 
   return (
-    <section className="mx-auto flex w-full items-center gap-1 sm:max-w-md">
-      <Label htmlFor="search-query" className="flex-1 text-base">
-        نام آرایشگاه‌
+    <section className="mx-auto flex w-full items-center gap-5 sm:max-w-md">
+      <Label htmlFor="search-query" className="text-base">
+        Barber&apos;s Name
       </Label>
       <Input
         type="text"
@@ -18,7 +18,7 @@ export default function SearchBox() {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         className="flex-[3]"
-        placeholder="نام آرایشگاه موردنظر را وارد کنید..."
+        placeholder="Enter a name to start searching..."
       />
     </section>
   );

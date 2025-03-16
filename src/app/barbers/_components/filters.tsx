@@ -13,10 +13,10 @@ export default function Filters({
   hideTitle = false,
 }: FiltersProps) {
   return (
-    <Card className={cn('flex-1', className)}>
+    <Card className={cn('w-full max-w-xs', className)}>
       <CardHeader>
         <CardTitle className={cn('text-xl', hideTitle && 'hidden')}>
-          فیلترها
+          Filters
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">

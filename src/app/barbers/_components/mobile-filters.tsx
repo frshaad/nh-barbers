@@ -13,12 +13,12 @@ export default function MobileFilters() {
     <Sheet>
       <SheetTrigger asChild>
         <Button className="w-full cursor-pointer" variant="secondary">
-          فیلترها
+          Filters
         </Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="pt-20">
-          <SheetTitle className="text-xl">فیلترها</SheetTitle>
+          <SheetTitle className="text-xl">Filters</SheetTitle>
         </SheetHeader>
         <Filters className="rounded-none border-none" hideTitle />
       </SheetContent>
