@@ -1,5 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import configPrettier from 'eslint-config-prettier';
 import n from 'eslint-plugin-n';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
@@ -17,6 +18,7 @@ export default tseslint.config([
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   js.configs.recommended,
   eslintPluginUnicorn.configs.recommended,
+  ...pluginQuery.configs['flat/recommended'],
   {
     plugins: { n },
     rules: {

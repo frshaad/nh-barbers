@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Vazirmatn } from 'next/font/google';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
+import Providers from '@/components/query-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
@@ -33,7 +34,9 @@ export default function RootLayout({
           disableTransitionOnChange
           enableSystem
         >
-          <NuqsAdapter>{children}</NuqsAdapter>
+          <NuqsAdapter>
+            <Providers>{children}</Providers>
+          </NuqsAdapter>
         </ThemeProvider>
       </body>
     </html>
